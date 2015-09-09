@@ -12,11 +12,12 @@ namespace Quiron.LojaVirtual.Web.Controllers.HtmlHelpers
        {
            StringBuilder resultado = new StringBuilder();
 
-           for (int i = 1; i < paginacao.TotalPagina; i++)
+           for (int i = 1; i <= paginacao.TotalPagina; i++)
            {
                TagBuilder tag = new TagBuilder("a");
                tag.MergeAttribute("href", paginaUrl(i));
                tag.InnerHtml = i.ToString();
+
                if (i == paginacao.PaginaAtual)
                {
                    tag.AddCssClass("selected");
